@@ -25,7 +25,7 @@ const f = () => {
 };
 
 // TODO: sanitize HTML
-const streamToDom = async (p, xs) => {
+export const streamToDom = async (p, xs) => {
     const doc = document.implementation.createHTMLDocument();
     // It's safe to use this in spite of the HTML spec warning
     // (https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#document.write())
@@ -39,11 +39,11 @@ const streamToDom = async (p, xs) => {
     }
 };
 
-const test = async (xs) => {
+export const test = async (xs) => {
     for await (const x of xs) {
         console.info(x);
     }
 };
 
 
-streamToDom(document.body, f());
+// streamToDom(document.body, f());
